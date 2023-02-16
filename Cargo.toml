@@ -1,0 +1,27 @@
+[package]
+name = "json-ecs-sub"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[lib]
+name = "json_ecs_sub"
+path = "src/lib/lib.rs"
+
+[[bin]]
+name = "json_ecs_sub_cli"
+path = "src/main.rs"
+
+
+[dependencies]
+bevy = "0.9.1"
+bevy-tokio-tasks = { git = "https://github.com/JoeHowarth/bevy-tokio-tasks" }
+bevy_ecs_dynamic = { path = "../bevy_ecs_dynamic" }
+clap = { version = "4.1.4", features = ["derive", "default"] }
+crossbeam-channel = "0.5.6"
+futures-util = "0.3.26"
+serde = "1.0.152"
+serde_json = { version = "1.0.93", features = ["default", "raw_value"] }
+tokio = { version = "1.25.0", features = ["signal", "macros"] }
+tokio-tungstenite = "0.18.0"
